@@ -46,7 +46,8 @@ const applications = [
 ]
 export default function Home() {
   return (
-    <section className="container mx-auto pt-8">
+    <section className="min-h-screen p-4 md:p-8">
+
       <div className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-2">
           <h1 className="text-xl font-semibold">Welcome, Jay!</h1>
@@ -57,25 +58,34 @@ export default function Home() {
         </button>
       </div>
 
+      
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         <StatisticsCard 
           title="Shortlisted Talents" 
+          image="/checkmark-circle-01.svg"
+          color="text-[#5465FF]"
           value="12"
           unit="talents"
         />
         <StatisticsCard 
           title="Time Saved" 
+          image="/time-quarter-pass.svg"
+          color="text-[#219150]"
           value="75"
           unit="hours"
         />
         <StatisticsCard 
           title="Hiring Speed" 
           value="14"
+          image="/calendar-02.svg"
+          color="text-[#B58300]"
           unit="days"
         />
         <StatisticsCard 
           title="Talent Satisfaction" 
           value="85"
+          color="text-[#2ECC71]"
+          image="/Group1.svg"
           unit="%"
         />
       </div>
@@ -83,7 +93,7 @@ export default function Home() {
       <JobsTable />
       <BestMatchTable />
 
-      <div>
+      {/*<div className="bg-[#EBECEE]">
         <div className="flex items-center justify-between bg-slate-500 rounded-ss-lg rounded-se-lg  p-4 mt-8">
           <div className='flex items-center space-x-8'>
             job
@@ -92,7 +102,7 @@ export default function Home() {
 
         <div className="bg-white shadow-md overflow-hidden w-[100%]">
           <table className="min-w-full divide-y divide-gray-200">
-            {/* <thead className="">
+             <thead className="">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   S/N
@@ -110,10 +120,10 @@ export default function Home() {
                   Pre-Screening Interview
                 </th>
               </tr>
-            </thead> */}
+            </thead> 
 
 
-            {/* <tbody className="bg-white divide-y divide-gray-200">
+             <tbody className="bg-white divide-y divide-gray-200">
               {applications.map((app) => (
                 <tr key={app.id}>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{app.id}</td>
@@ -166,14 +176,14 @@ export default function Home() {
                   </td> 
                 </tr>
               ))}
-            </tbody> */}
+            </tbody> 
           </table>
         </div>
-      </div>
+      </div>*/}
 
 
 
-      <div>
+      {/* <div>
         <div className="flex items-center justify-between bg-slate-500 rounded-ss-lg rounded-se-lg  p-4 mt-8">
           <div className='flex items-center space-x-8'>
             job
@@ -227,7 +237,7 @@ export default function Home() {
 
 
 
-                  {/* <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       app.jobType === 'Contract' ? 'bg-green-100 text-green-800' :
                       app.jobType === 'Unpaid - Internship' ? 'bg-purple-100 text-purple-800' :
@@ -237,29 +247,29 @@ export default function Home() {
                     }`}>
                       {app.jobType}
                     </span>
-                  </td> */}
+                  </td>
 
 
-                  {/* <td className="px-6 py-4 whitespace-nowrap">
+                  <td className="px-6 py-4 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                       app.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
                     }`}>
                       {app.status}
                     </span>
-                  </td> */}
+                  </td>
 
 
-                  {/* <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <button className="text-indigo-600 hover:text-indigo-900">
                       <FaPencilAlt />
                     </button>
-                  </td> */}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -8,6 +8,7 @@ interface FormData {
   description: string;
   difficultyLevel: string;
   duration: string;
+  questionType: string;
   passingGrade: string;
   reviewResponses: boolean;
   displayFeedback: boolean;
@@ -23,6 +24,7 @@ const AddAssessment: React.FC = () => {
     description: '',
     difficultyLevel: '',
     duration: '',
+    questionType:'',
     passingGrade: '',
     reviewResponses: false,
     displayFeedback: false,
@@ -54,8 +56,8 @@ const AddAssessment: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen bg-gray-100 p-8">
+      <div className=" ">
         <h1 className="text-2xl font-semibold mb-8">Add Assessment</h1>
         
         <form onSubmit={handleSubmit} className="space-y-8">
@@ -123,18 +125,17 @@ const AddAssessment: React.FC = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Difficulty Level
+                  Question Type <span className='text-[#5465FF]'>(optional)</span>
                 </label>
                 <select
-                  name="difficultyLevel"
-                  value={formData.difficultyLevel}
+                  name="questionType"
+                  value={formData.questionType}
                   onChange={handleInputChange}
                   className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                  <option value="">Select level</option>
-                  <option value="junior">Junior</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="senior">Senior</option>
+                  <option value="">Coding</option>
+                  <option value="junior">Project based</option>
+                  
                 </select>
               </div>
             </div>
@@ -187,76 +188,80 @@ const AddAssessment: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <label className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  name="reviewResponses"
-                  checked={formData.reviewResponses}
-                  onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <div>
-                  <p className="font-medium">Review and approve responses</p>
-                  <p className="text-sm text-gray-500">If turned off, talents will see results without your review and approval</p>
-                </div>
-              </label>
+            <div className="flex justify-between">
+              <div className='space-y-4'>
+                <label className="flex justify-start items-start gap-x-3">
+                  <input
+                    type="checkbox"
+                    name="reviewResponses"
+                    checked={formData.reviewResponses}
+                    onChange={handleCheckboxChange}
+                    className="w-4 h-4 mt-1 text-blue-600"
+                  />
+                  <div>
+                    <p className="font-medium">Review and approve responses</p>
+                    <p className="text-sm text-gray-500">If turned off, talents will see results without your review and approval</p>
+                  </div>
+                </label>
 
-              <label className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  name="displayFeedback"
-                  checked={formData.displayFeedback}
-                  onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <div>
-                  <p className="font-medium">Display feedback</p>
-                  <p className="text-sm text-gray-500">If turned off, talents will not see the reason they fail or pass assessment</p>
-                </div>
-              </label>
+                <label className="flex justify-start items-start gap-x-3">
+                  <input
+                    type="checkbox"
+                    name="displayFeedback"
+                    checked={formData.displayFeedback}
+                    onChange={handleCheckboxChange}
+                    className="w-4 h-4 mt-1 text-blue-600"
+                  />
+                  <div>
+                    <p className="font-medium">Display feedback</p>
+                    <p className="text-sm text-gray-500">If turned off, talents will not see the reason they fail or pass assessment</p>
+                  </div>
+                </label>
 
-              <label className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  name="shuffleQuestions"
-                  checked={formData.shuffleQuestions}
-                  onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <div>
-                  <p className="font-medium">Shuffle questions</p>
-                  <p className="text-sm text-gray-500">Questions will be shuffled at every attempt</p>
-                </div>
-              </label>
+                <label className="flex justify-start items-start gap-x-3">
+                  <input
+                    type="checkbox"
+                    name="shuffleQuestions"
+                    checked={formData.shuffleQuestions}
+                    onChange={handleCheckboxChange}
+                    className="w-4 h-4 mt-1 text-blue-600"
+                  />
+                  <div>
+                    <p className="font-medium">Shuffle questions</p>
+                    <p className="text-sm text-gray-500">Questions will be shuffled at every attempt</p>
+                  </div>
+                </label>
+              </div>
 
-              <label className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  name="usePublicLink"
-                  checked={formData.usePublicLink}
-                  onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <div>
-                  <p className="font-medium">Use public link</p>
-                  <p className="text-sm text-gray-500">Use this assessment for external purposes</p>
-                </div>
-              </label>
+              <div className='space-y-4'>
+                <label className="flex justify-start items-start gap-x-3">
+                  <input
+                    type="checkbox"
+                    name="usePublicLink"
+                    checked={formData.usePublicLink}
+                    onChange={handleCheckboxChange}
+                    className="w-4 h-4 mt-1 text-blue-600"
+                  />
+                  <div>
+                    <p className="font-medium">Use public link</p>
+                    <p className="text-sm text-gray-500">Use this assessment for external purposes</p>
+                  </div>
+                </label>
 
-              <label className="flex items-center gap-3">
-                <input
-                  type="checkbox"
-                  name="setDateTime"
-                  checked={formData.setDateTime}
-                  onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-blue-600"
-                />
-                <div>
-                  <p className="font-medium">Start and end date/time</p>
-                  <p className="text-sm text-gray-500">Set start and end date/time for your assessment</p>
-                </div>
-              </label>
+                <label className="flex justify-start items-start gap-x-3">
+                  <input
+                    type="checkbox"
+                    name="setDateTime"
+                    checked={formData.setDateTime}
+                    onChange={handleCheckboxChange}
+                    className="w-4 h-4 mt-1 text-blue-600"
+                  />
+                  <div>
+                    <p className="font-medium">Start and end date/time</p>
+                    <p className="text-sm text-gray-500">Set start and end date/time for your assessment</p>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
 

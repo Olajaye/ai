@@ -1,4 +1,6 @@
 import React from 'react';
+import { LuArrowDownUp } from "react-icons/lu";
+import { IoCalendarOutline } from "react-icons/io5";
 
 interface Job {
   id: number;
@@ -42,10 +44,41 @@ const jobs: Job[] = [
 export const JobsTable: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm mt-8">
-      <div className="flex justify-between items-center p-4 border-b">
-        <h2 className="font-semibold">Jobs</h2>
-        <button className="text-gray-600 hover:text-gray-800">View All</button>
+
+
+      <div className=" bg-[#EBECEE] rounded-ss-lg rounded-se-lg  p-2 border-b">
+
+        <div className=''>
+         <h2 className="font-semibold">Jobs</h2>
+        </div>
+
+        
+
+        <div className=''>
+          <div>
+            <LuArrowDownUp />
+          </div>
+          <div className='ms-4'>
+            <button>View All</button>
+          </div>
+        </div>
+
+        {/* <div className='flex justify-between items-center space-x-4 '>
+
+          <div className='bg-white p-1 border-black border-[1px] rounded-2xl me-4'>
+            <div><LuArrowDownUp /></div>
+          </div>
+
+
+          <div className="bg-white p-2 border-black border-[1px] rounded-2xl text-sm ms-5">
+            <h2>View All</h2>
+          </div>
+
+        </div> */}
+        
       </div>
+
+
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-50 text-sm text-gray-500">
@@ -60,9 +93,11 @@ export const JobsTable: React.FC = () => {
           </thead>
           <tbody className="text-sm">
             {jobs.map((job) => (
+              <>
               <tr key={job.id} className="border-t">
                 <td className="py-3 px-4">{job.id}</td>
                 <td className="py-3 px-4 font-medium">{job.role}</td>
+                
                 <td className="py-3 px-4">
                   <span className={job.talentsApplied.color}>
                     {job.talentsApplied.count} talents applied
@@ -73,10 +108,12 @@ export const JobsTable: React.FC = () => {
                 <td className="py-3 px-4">
                   <div className="flex items-center gap-2">
                     <span>{job.finalInterview}</span>
-                    <button className="text-blue-600 hover:text-blue-700">Interview</button>
+                    <button className="bg-[#3580B5] text-[#3580B5] flex items-center space-x-3"> <IoCalendarOutline /> Interview</button>
                   </div>
                 </td>
               </tr>
+             
+              </>
             ))}
           </tbody>
         </table>

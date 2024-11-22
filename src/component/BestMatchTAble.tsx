@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface Candidate {
@@ -56,9 +57,14 @@ export const BestMatchTable: React.FC = () => {
               <tr key={candidate.id} className="border-t">
                 <td className="py-3 px-4">{candidate.id}</td>
                 <td className="py-3 px-4">
-                  <div>
+                  <div className='flex space-x-4'>
+                  <div className='rounded-full'>
+                    <Image src={'/calendar-02.svg'} alt='lol' width={40} height={40} className='rounded-full'/>
+                  </div>
+                  <div className='ms-4'>
                     <div className="font-medium">{candidate.name}</div>
                     <div className="text-gray-500">{candidate.email}</div>
+                  </div>
                   </div>
                 </td>
                 <td className="py-3 px-4">{candidate.role}</td>

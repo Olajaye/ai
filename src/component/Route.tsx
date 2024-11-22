@@ -10,14 +10,15 @@ const Route = () => {
         <Link href="/">home</Link>
       </div>
       <div>
-        <Link href="/asstart">Assessment</Link>
-      </div>
-      <div>
-        <Link href="/assdetail">Assessment details</Link>
+        <Link href="/assessment">Assessment</Link>
       </div>
       <div>
         <Link href="/addstart">Add Assessment </Link>
       </div>
+      <div>
+        <Link href="/assdetail">Assessment details</Link>
+      </div>
+      
       <div>
         <Link href="/asques">Assessment question</Link>
       </div>

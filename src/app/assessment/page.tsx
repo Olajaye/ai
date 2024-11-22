@@ -109,7 +109,7 @@ function Assessmaent() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-gray-100 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-xl font-semibold">Assessment Statistics</h1>
@@ -126,17 +126,17 @@ function Assessmaent() {
         </div>
 
         <div className="bg-white rounded-lg p-6">
-          <div className="flex justify-between items-center mb-6">
+          <div className="sm:flex justify-between items-center mb-6">
             <div>
               <h2 className="text-xl font-semibold">Assessment</h2>
               <p className="text-gray-500 text-sm">Add, edit, duplicate and archive assessments</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mt-5 sm:mt:0">
               <button className="flex items-center gap-2 px-4 py-2 border rounded-lg">
                 <FilterIcon />
                 <span>Filter</span>
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg">
+              <button className="flex items-center gap-2 px-2 py-2 bg-blue-600 text-white rounded-lg">
                 <PlusIcon />
                 <span>Add Assessment</span>
               </button>

@@ -28,12 +28,12 @@ const AssessmentCard: React.FC<AssessmentCardProps> = ({
               {tags.map((tag, index) => (
                 <span
                   key={index}
-                  className={`text-xs px-2 py-1 rounded-xl ${
+                  className={`text-xs px-2 py-1  ${
                     tag === 'Published'
-                      ? 'bg-green-100 text-green-600'
+                      ? 'bg-green-100 text-green-600 rounded-lg'
                       : tag === 'Unpublished'
-                      ? 'bg-red-100 text-red-600'
-                      : 'bg-blue-100 text-blue-600'
+                      ? 'bg-red-100 text-red-600 rounded-lg'
+                      : 'bg-blue-100 text-blue-600 rounded-lg'
                   }`}
                 >
                   {tag}
