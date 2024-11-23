@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { LuArrowDownUp } from 'react-icons/lu';
 
 interface Candidate {
   id: number;
@@ -35,10 +36,37 @@ const candidates: Candidate[] = [
 export const BestMatchTable: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm mt-8">
-      <div className="flex justify-between items-center p-4 border-b">
+
+      {/* <div className="flex justify-between items-center p-4 border-b">
         <h2 className="font-semibold">Best Match</h2>
         <button className="text-gray-600 hover:text-gray-800">View All</button>
+      </div> */}
+
+      <div className=" bg-[#EBECEE] rounded-ss-lg rounded-se-lg  p-2 border-b flex justify-between">
+
+        <div className=''>
+          <h2 className="font-semibold">Best Match</h2>
+        </div>
+
+
+        <div className='flex justify-between items-center space-x-4 '>
+
+          <div className='bg-white p-1 border-black border-[1px] rounded-2xl me-4'>
+            <div><LuArrowDownUp /></div>
+          </div>
+
+
+          <div className="bg-white p-2 border-black border-[1px] rounded-2xl text-sm ms-5">
+            <h2>View All</h2>
+          </div>
+
+        </div>
+
       </div>
+
+
+
+
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-gray-50 text-sm text-gray-500">

@@ -4,7 +4,7 @@ import React from 'react';
 import { AssessmentHeader } from './assessmentHeader';
 import { StatCard } from './statCard';
 import { QuestionSection } from './questionSection';
-import { BsPlus } from 'react-icons/bs';
+
 
 function AssessmentDetails() {
   return (

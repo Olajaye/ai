@@ -22,6 +22,9 @@ const Route = () => {
       <div>
         <Link href="/asques">Assessment question</Link>
       </div>
+      <div>
+        <Link href="/model">models</Link>
+      </div>
     </div>
   )
 }

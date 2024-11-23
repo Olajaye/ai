@@ -46,24 +46,14 @@ export const JobsTable: React.FC = () => {
     <div className="bg-white rounded-lg shadow-sm mt-8">
 
 
-      <div className=" bg-[#EBECEE] rounded-ss-lg rounded-se-lg  p-2 border-b">
+      <div className=" bg-[#EBECEE] rounded-ss-lg rounded-se-lg  p-2 border-b flex justify-between">
 
         <div className=''>
          <h2 className="font-semibold">Jobs</h2>
         </div>
 
-        
-
-        <div className=''>
-          <div>
-            <LuArrowDownUp />
-          </div>
-          <div className='ms-4'>
-            <button>View All</button>
-          </div>
-        </div>
-
-        {/* <div className='flex justify-between items-center space-x-4 '>
+    
+        <div className='flex justify-between items-center space-x-4 '>
 
           <div className='bg-white p-1 border-black border-[1px] rounded-2xl me-4'>
             <div><LuArrowDownUp /></div>
@@ -74,7 +64,7 @@ export const JobsTable: React.FC = () => {
             <h2>View All</h2>
           </div>
 
-        </div> */}
+        </div>
         
       </div>
 

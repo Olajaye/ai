@@ -1,5 +1,5 @@
 import React from 'react';
-import { EditIcon, TrashIcon, PlusIcon } from '@/component/Icons';
+import { PlusIcon } from '@/component/Icons';
 import QuestionList from '@/component/QuestionList';
 import { FaPencil } from 'react-icons/fa6';
 import { RiDeleteBin6Line } from 'react-icons/ri';
